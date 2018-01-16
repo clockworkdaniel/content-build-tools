@@ -1,6 +1,6 @@
-$desktopcrop : "(max-width: 1280px)";
+$desktopcrop : "(max-width: 1200px)";
 $retina : "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
-$retinacrop : "(max-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1280px) and (min-resolution: 192dpi)";
+$retinacrop : "(max-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1200px) and (min-resolution: 192dpi)";
 $mob : "(max-width: 700px)";
 
 @mixin image ($url, $padding-bottom) {
@@ -21,6 +21,15 @@ $mob : "(max-width: 700px)";
 	@media #{$retina} {
 		background-image: url('#{$url}?$retina$');
 	}
+	
+	@media #{$retinacrop}{
+		background-image: url('#{$url}?$desktop$');
+	}
+
+		@media #{$desktopcrop}{
+			background-image: url('#{$url}?$desktop$');
+		}
+
 }
 
 @mixin extend-fw($url, $padding-bottom) {

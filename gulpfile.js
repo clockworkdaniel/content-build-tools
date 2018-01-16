@@ -9,7 +9,7 @@ var combineMq = require('gulp-combine-mq');
 
 
 var autoprefixer = require('autoprefixer');
-var paddingBottom = require('ri-postcss-scss');
+var paddingBottom = require('./app/postcss-plugin/index.js');
 
 gulp.task('addPaddingBottom', function(){
 
@@ -17,9 +17,9 @@ gulp.task('addPaddingBottom', function(){
 		paddingBottom
 	];
 
-	return gulp.src('app/postcss-scss/*.scss')
+	return gulp.src('app/workspace/postcss-scss/*.scss')
 	.pipe(postcss(processors, {syntax: scss}))
-	.pipe(gulp.dest('app/scss'));
+	.pipe(gulp.dest('app/workspace/scss'));
 
 });
 
@@ -29,16 +29,16 @@ gulp.task('sass', ['addPaddingBottom'], function(){
 		autoprefixer
 	];
 
-	return gulp.src('app/scss/*.scss')
+	return gulp.src('app/workspace/scss/*.scss')
 	.pipe(sass())
 	.pipe(combineMq())
 	.pipe(postcss(processors))
-	.pipe(gulp.dest('app/css'));
+	.pipe(gulp.dest('app/workspace/css'));
 
 });
 
 
 
 gulp.task("watch", ['sass'], function() {
-  gulp.watch("app/postcss-scss/content.scss", ['sass']);
+  gulp.watch("app/workspace/postcss-scss/content.scss", ["sass"]);
 });

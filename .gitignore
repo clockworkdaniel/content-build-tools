@@ -1,2 +1,3 @@
 node_modules/
 app/postcss-plugin/node_modules/
+.DS_Store

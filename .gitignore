@@ -1,4 +1,4 @@
-/node_modules/*
-
-!/node_modules/ri-postcss-scss/
-!/node_modules/ri-postcss-scss/*
+# Dependency directories
+node_modules/*
+!node_modules/ri-postcss-scss/index.js
+!node_modules/ri-postcss-scss/package.json

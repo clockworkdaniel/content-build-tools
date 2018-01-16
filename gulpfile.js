@@ -9,7 +9,7 @@ var combineMq = require('gulp-combine-mq');
 
 
 var autoprefixer = require('autoprefixer');
-var paddingBottom = require('postcss-ri-padding-bottom');
+var paddingBottom = require('ri-postcss-scss');
 
 gulp.task('addPaddingBottom', function(){
 

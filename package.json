@@ -1,0 +1,28 @@
+{
+  "name": "ri-content",
+  "version": "0.0.7",
+  "description": "tools to effeciently build typical RI content pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Mears",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.12.1",
+    "gulp": "^3.9.1",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-promise": "^1.0.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-wait": "0.0.2",
+    "image-size": "^0.5.1",
+    "postcss": "^5.2.8",
+    "postcss-at-rules-variables": "0.0.26",
+    "postcss-reporter": "^1.3.3",
+    "postcss-scss": "^0.4.0",
+    "stylelint": "^6.2.2",
+    "stylelint-config-standard": "^6.0.0"
+  }
+}

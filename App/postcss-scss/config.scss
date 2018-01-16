@@ -1,0 +1,58 @@
+$desktopcrop : "(max-width: 1200px)";
+$retina : "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+$retinacrop : "(max-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1200px) and (min-resolution: 192dpi)";
+$mob : "(max-width: 700px)";
+
+@mixin image ($url, $padding-bottom) {
+	background-image: url('#{$url}?$desktop$');
+	padding-bottom: $padding-bottom;
+
+	@media #{$retina} {
+		background-image: url('#{$url}?$retina$');
+	}
+}
+
+@mixin true-fw($url, $vw-height, $max-height) {
+	
+	background-image: url('#{$url}?$desktop$');
+	height: $vw-height;
+	max-height: $max-height;
+	
+	@media #{$retina} {
+		background-image: url('#{$url}?$retina$');
+	}
+	
+	@media #{$retinacrop}{
+		background-image: url('#{$url}?$desktop$');
+	}
+
+		@media #{$desktopcrop}{
+			background-image: url('#{$url}?$desktop$');
+		}
+
+}
+
+@mixin extend-fw($url, $padding-bottom) {
+	background-image: url('#{$url}?$desktop$');
+	padding-bottom: $padding-bottom;
+	
+	@media #{$desktopcrop} {
+		background-image: url('#{$url}?$desktop_crop$')
+	}
+	@media #{$retina} {
+		background-image: url('#{$url}?$retina$');
+	}
+	@media #{$retinacrop} {
+		background-image: url('#{$url}?$retina_crop$');
+	}
+}
+
+@mixin mobile($url, $padding-bottom) {
+
+	@media #{$mob} {
+		background-image: url('#{$url}?$mobile$');
+		padding-bottom: $padding-bottom;
+	}
+	
+}
+

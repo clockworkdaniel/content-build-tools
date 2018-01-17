@@ -1,21 +1,20 @@
 @import 'config';
 
-.promo-1 {
-	@include true-fw('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT', 9.675%, 193.5px );
+.mob-test {
+	@include mobile('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT', 62.419% );
 }
 
-.promo-2 {
-	@include extend-fw('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de', 19.325% );
-}
-
-.promo-3 {
+.image-test {
 	@include image('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT', 9.675% );
 }
 
-.promo-1-mob {
-	@include mobile('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT', 62.419% );
+.true-fw-test {
+	@include true-fw('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT', 9.675%, 193.5px );
 }
 
-.promo-3-mob {
-	@include mobile('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT', 62.419% );
+.extend-fw-test {
+	@include extend-fw('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de', 19.325% );
 }
+
+
+

@@ -1,61 +1,80 @@
-.promo-1 {
-  background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$desktop$");
-  height: 9.675%;
-  max-height: 193.5px;
+.mob-test {
+  background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$mobile$");
+  padding-bottom: 62.419%;
 }
 
-.promo-2 {
-  background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de?$desktop$");
-  padding-bottom: 19.325%;
+@media (min-width: 701px) {
+  .mob-test {
+    display: none;
+  }
+
+  .image-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$desktop$");
+    padding-bottom: 9.675%;
+  }
+
+  .true-fw-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$desktop-sm$");
+    height: 9.675%;
+    max-height: 193.5px;
+  }
+
+  .extend-fw-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de?$desktop-sm_crop$");
+    padding-bottom: 19.325%;
+  }
 }
 
-.promo-3 {
-  background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$desktop$");
-  padding-bottom: 9.675%;
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .promo-1 {
+@media (min-width: 701px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 701px) and (min-resolution: 192dpi) {
+  .image-test {
     background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$retina$");
   }
 
-  .promo-2 {
+  .true-fw-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$retina-sm$");
+  }
+
+  .extend-fw-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de?$retina-sm_crop$");
+  }
+}
+
+@media (min-width: 1201px) {
+  .true-fw-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$desktop-md$");
+  }
+
+  .extend-fw-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de?$retina-md_crop$");
+  }
+}
+
+@media (min-width: 1201px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1201px) and (min-resolution: 192dpi) {
+  .true-fw-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$retina-md$");
+  }
+
+  .extend-fw-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de?$retina-md_crop$");
+  }
+}
+
+@media (min-width: 1441px) {
+  .true-fw-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$desktop$");
+  }
+
+  .extend-fw-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de?$desktop$");
+  }
+}
+
+@media (min-width: 1441px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1441px) and (min-resolution: 192dpi) {
+  .true-fw-test {
+    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$retina$");
+  }
+
+  .extend-fw-test {
     background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de?$retina$");
-  }
-
-  .promo-3 {
-    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$retina$");
-  }
-}
-
-@media (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1200px) and (min-resolution: 192dpi) {
-  .promo-1 {
-    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$desktop$");
-  }
-
-  .promo-2 {
-    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de?$retina_crop$");
-  }
-}
-
-@media (max-width: 1200px) {
-  .promo-1 {
-    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$desktop$");
-  }
-
-  .promo-2 {
-    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de?$desktop_crop$");
-  }
-}
-
-@media (max-width: 700px) {
-  .promo-1-mob {
-    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$mobile$");
-    padding-bottom: 62.419%;
-  }
-
-  .promo-3-mob {
-    background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT?$mobile$");
-    padding-bottom: 62.419%;
   }
 }

@@ -1,21 +1,20 @@
 @import 'config';
 
-.promo-1 {
-	@include true-fw('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT');
+.mob-test {
+	@include mobile('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT');
 }
 
-.promo-2 {
-	@include extend-fw('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de');
-}
-
-.promo-3 {
+.image-test {
 	@include image('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT');
 }
 
-.promo-1-mob {
-	@include mobile('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT');
+.true-fw-test {
+	@include true-fw('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT');
 }
 
-.promo-3-mob {
-	@include mobile('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT');
+.extend-fw-test {
+	@include extend-fw('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de');
 }
+
+
+

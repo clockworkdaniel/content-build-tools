@@ -23,6 +23,11 @@
     background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de?$desktop-sm_crop$");
     padding-bottom: 19.325%;
   }
+
+  .animation {
+    -webkit-animation: KEYNAME 1s;
+            animation: KEYNAME 1s;
+  }
 }
 
 @media (min-width: 701px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 701px) and (min-resolution: 192dpi) {
@@ -76,5 +81,33 @@
 
   .extend-fw-test {
     background-image: url("http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de?$retina$");
+  }
+}
+
+@-webkit-keyframes KEYNAME {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes KEYNAME {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }

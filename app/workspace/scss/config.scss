@@ -1,3 +1,24 @@
+//	IMAGE PRESETS 
+//		
+//		- $desktop$ - scl=2
+//		- $retina$ - scl=1
+//
+//		- $tablet$ - turns image to retina 768px
+//		- $tablet-tfw$ - turns true-fw to retina 768px
+//		- $tablet-efw$ - turns true-fw to retina 768px with crop
+//
+//		- $desktop-sm$ - turns true-fw to width 1200px - scl=3.333334
+//		- $retina-sm$ - turns true-fw to width 2400px - scl=1.66666666666667
+//
+//		- $desktop-sm_crop$ - turns extend-fw to width 1280px - cropN=
+//		- $retina-sm_crop$ - turns extend-fw to width 2560px -cropN=
+//
+//		- $desktop-md$ - turns true-fw to width 1440px - scl=2.77777777777778
+//		- $retina-md$ - turns true-fw to width 2880px - scl=1.38888888888889
+//
+//		- $desktop-md_crop$ - turns extend-fw to width 1440px - cropN=
+//		- $retina-md_crop$ - turns extend-fw to width 2880px - cropN=
+
 $desktop : "(min-width: 701px)";
 $retina : "(min-width: 701px) and (min-resolution: 192dpi)";
 

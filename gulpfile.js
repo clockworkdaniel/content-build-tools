@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
-var wait = require('gulp-wait');
 var scss = require ('postcss-scss');
 var combineMq = require('gulp-combine-mq');
 

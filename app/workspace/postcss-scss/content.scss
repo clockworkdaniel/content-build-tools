@@ -1,5 +1,7 @@
 @import 'config';
 
+//images
+
 .mob-test {
 	@include mobile('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT');
 }
@@ -16,5 +18,21 @@
 	@include extend-fw('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de');
 }
 
+//mobile
+
+//tablet and desktop
+
+@media (min-width: 701px) {
+	.animation {
+		animation: KEYNAME 1s;
+	}
+}
 
 
+
+
+
+@keyframes KEYNAME {
+  0%   { opacity: 0; transform: rotate(90deg) }
+  100% { opacity: 1; transform: rotate(0deg) }
+}

@@ -1,7 +1,7 @@
 //"use strict";
 
 var url = require('url');
-var http = require('http');
+var https = require('https');
 
 var postcss = require('postcss');
 var sizeOf = require('image-size');
@@ -23,7 +23,7 @@ module.exports = postcss.plugin('padding', function padding(options) {
       finalParams = ", " + paddingBottom.toFixed(3) + "% )";
     } else if (thisInclude === "true-fw") {
       vwHeight = dimensions.height / 4000 * 100;
-      vwHeight = ", " + vwHeight.toFixed(3) + "%";
+      vwHeight = ", " + vwHeight.toFixed(3) + "vw";
       maxHeight = ", " + dimensions.height/2+"px )";
       finalParams = vwHeight + maxHeight;
     }
@@ -67,7 +67,7 @@ module.exports = postcss.plugin('padding', function padding(options) {
 
 		var httpPromise = new Promise(function(resolve){
 
-			http.get(options, function (response) {
+			https.get(options, function (response) {
 				let chunks = [];
 					response.on('data', function (chunk) {
 					chunks.push(chunk);

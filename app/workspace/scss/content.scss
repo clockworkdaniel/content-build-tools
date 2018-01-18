@@ -2,37 +2,22 @@
 
 //images
 
-.mob-test {
-	@include mobile('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT', 62.419% );
+.grazia{
+	@include true-fw('https://riverisland.scene7.com/is/image/RiverIsland/c20180115_wwlp_grazia_banner_DNT', 7.175vw, 143.5px );
 }
 
-.image-test {
-	@include image('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT', 9.675% );
+.promo1 {
+	@include true-fw('https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT', 50.000vw, 1000px );
 }
 
-.true-fw-test {
-	@include true-fw('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT', 9.675%, 193.5px );
+.promo2 {
+	@include true-fw('https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_kids_DNT', 50.000vw, 1000px );
 }
 
-.extend-fw-test {
-	@include extend-fw('http://riverisland.scene7.com/is/content/RiverIsland/c20180110_HP_FLASH_SALE_BANNER_DNT_de', 19.325% );
+.imwearingri {
+	@include true-fw('https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_imwearingri_DNT', 23.650vw, 473px );
 }
 
-//mobile
-
-//tablet and desktop
-
-@media (min-width: 701px) {
-	.animation {
-		animation: KEYNAME 1s;
-	}
-}
-
-
-
-
-
-@keyframes KEYNAME {
-  0%   { opacity: 0; transform: rotate(90deg) }
-  100% { opacity: 1; transform: rotate(0deg) }
+.image {
+	background-size: auto 100%;
 }

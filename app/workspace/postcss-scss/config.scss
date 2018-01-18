@@ -1,32 +1,40 @@
 //	IMAGE PRESETS 
+//
+//		- $mobile$ - scl=1
 //		
 //		- $desktop$ - scl=2
 //		- $retina$ - scl=1
 //
-//		- $tablet$ - turns image to retina 768px
-//		- $tablet-tfw$ - turns true-fw to retina 768px
-//		- $tablet-efw$ - turns true-fw to retina 768px with crop
+//		TO DO
 //
-//		- $desktop-sm$ - turns true-fw to width 1200px - scl=3.333334
-//		- $retina-sm$ - turns true-fw to width 2400px - scl=1.66666666666667
+//		- $tablet$ - turns image to retina 768px - scl=1.5625
+//		- $tablet-tfw$ - turns true-fw to retina 768px - scl=5.208334
+//		- $tablet-efw$ - turns true-fw to retina 768px with crop - scl=1.5625&cropN=0.18,0,0.64,1
 //
-//		- $desktop-sm_crop$ - turns extend-fw to width 1280px - cropN=
-//		- $retina-sm_crop$ - turns extend-fw to width 2560px -cropN=
+//		- $desktop-sm$ - turns true-fw to width 1280px - scl=3.125
+//		- $retina-sm$ - turns true-fw to width 2560px - scl=1.5625
+//
+//		- $desktop-sm_crop$ - turns extend-fw to width 1280px - scl=2&cropN=0.18,0,0.64,1
+//		- $retina-sm_crop$ - turns extend-fw to width 2560px - scl=1&cropN=0.18,0,0.64,1
 //
 //		- $desktop-md$ - turns true-fw to width 1440px - scl=2.77777777777778
 //		- $retina-md$ - turns true-fw to width 2880px - scl=1.38888888888889
 //
-//		- $desktop-md_crop$ - turns extend-fw to width 1440px - cropN=
-//		- $retina-md_crop$ - turns extend-fw to width 2880px - cropN=
+//		- $desktop-md_crop$ - turns extend-fw to width 1440px - scl=2&cropN=0.14,0,0.72,1
+//		- $retina-md_crop$ - turns extend-fw to width 2880px - scl=1&cropN=0.14,0,0.72,1
+
+//	MEDIA QUERIES
 
 $desktop : "(min-width: 701px)";
 $retina : "(min-width: 701px) and (min-resolution: 192dpi)";
 
-$desktop-medium : "(min-width: 1201px)";
-$retina-medium : "(min-width: 1201px) and (min-resolution: 192dpi)";
+$desktop-medium : "(min-width: 1281px)";
+$retina-medium : "(min-width: 1281px) and (min-resolution: 192dpi)";
 
 $desktop-large : "(min-width: 1441px)";
 $retina-large : "(min-width: 1441px) and (min-resolution: 192dpi)";
+
+// MIXINS
 
 @mixin mobile($url, $padding-bottom) {
 	
@@ -89,7 +97,7 @@ $retina-large : "(min-width: 1441px) and (min-resolution: 192dpi)";
 	}
 
 	@media #{$desktop-medium} {
-		background-image: url('#{$url}?$retina-md_crop$');
+		background-image: url('#{$url}?$desktop-md_crop$');
 	}
 	@media #{$retina-medium} {
 		background-image: url('#{$url}?$retina-md_crop$');

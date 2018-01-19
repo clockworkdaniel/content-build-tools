@@ -12,8 +12,14 @@
   margin-bottom: 5%;
 }
 
-.promo-1-mob {
+.region-UK .promo-1-mob,.region-DE .promo-1-mob,.region-FR .promo-1-mob,.region-NL .promo-1-mob {
   background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-mob1_DNT?$mobile$");
+  padding-bottom: 84.677%;
+  margin-top: 4%;
+}
+
+.promo-1-mob {
+  background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-mob1_DNT_int?$mobile$");
   padding-bottom: 84.677%;
   margin-top: 4%;
 }
@@ -23,7 +29,7 @@
   padding-bottom: 82.258%;
 }
 
-.region-UK .promo-2-mob {
+.region-UK .promo-2-mob,.region-DE .promo-2-mob,.region-FR .promo-2-mob,.region-NL .promo-2-mob {
   background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-mob2_DNT?$mobile$");
   padding-bottom: 118.065%;
 }
@@ -53,7 +59,7 @@
   margin-bottom: 3%;
 }
 
-.region-UK .promo-2 {
+.region-UK .promo-2,.region-DE .promo-2,.region-FR .promo-2,.region-NL .promo-2 {
   margin-bottom: 4%;
   margin-top: 8%;
 }
@@ -95,7 +101,7 @@
   display: block !important;
 }
 
-.region-UK .promo-2__gif .INT {
+.region-UK .INT {
   display: none !important;
 }
 
@@ -109,6 +115,10 @@
     display: none;
   }
 
+  .region-UK .promo-1-mob,.region-DE .promo-1-mob,.region-FR .promo-1-mob,.region-NL .promo-1-mob {
+    display: none;
+  }
+
   .promo-1-mob {
     display: none;
   }
@@ -117,7 +127,7 @@
     display: none;
   }
 
-  .region-UK .promo-2-mob {
+  .region-UK .promo-2-mob,.region-DE .promo-2-mob,.region-FR .promo-2-mob,.region-NL .promo-2-mob {
     display: none;
   }
 
@@ -149,12 +159,12 @@
   }
 
   .promo-1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT?$desktop$");
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT_int?$desktop$");
     padding-bottom: 27.5%;
   }
 
-  .region-UK .promo-1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT_int?$desktop$");
+  .region-UK .promo-1,.region-FR .promo-1,.region-DE .promo-1,.region-NL .promo-1 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT?$desktop$");
     padding-bottom: 27.5%;
   }
 
@@ -163,7 +173,7 @@
     padding-bottom: 13.375%;
   }
 
-  .region-UK .promo-2 {
+  .region-UK .promo-2,.region-DE .promo-2,.region-FR .promo-2,.region-NL .promo-2 {
     background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo2_DNT?$desktop$");
     padding-bottom: 35.325%;
   }
@@ -197,18 +207,18 @@
   }
 
   .promo-1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT?$retina-sm$");
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT_int?$retina-sm$");
   }
 
-  .region-UK .promo-1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT_int?$retina-sm$");
+  .region-UK .promo-1,.region-FR .promo-1,.region-DE .promo-1,.region-NL .promo-1 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT?$retina-sm$");
   }
 
   .ri-active-banner {
     background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180115-gwlp-ri-active-banner_DNT?$retina-sm$");
   }
 
-  .region-UK .promo-2 {
+  .region-UK .promo-2,.region-DE .promo-2,.region-FR .promo-2,.region-NL .promo-2 {
     background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo2_DNT?$retina-sm$");
   }
 
@@ -239,18 +249,18 @@
   }
 
   .promo-1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT?$retina$");
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT_int?$retina$");
   }
 
-  .region-UK .promo-1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT_int?$retina$");
+  .region-UK .promo-1,.region-FR .promo-1,.region-DE .promo-1,.region-NL .promo-1 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo1_DNT?$retina$");
   }
 
   .ri-active-banner {
     background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180115-gwlp-ri-active-banner_DNT?$retina$");
   }
 
-  .region-UK .promo-2 {
+  .region-UK .promo-2,.region-DE .promo-2,.region-FR .promo-2,.region-NL .promo-2 {
     background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180118-gwlp-promo2_DNT?$retina$");
   }
 

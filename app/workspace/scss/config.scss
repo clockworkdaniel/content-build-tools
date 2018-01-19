@@ -5,9 +5,11 @@
 //		- $desktop$ - scl=2
 //		- $retina$ - scl=1
 //
-//		- $tablet$ - turns image to retina 768px - scl=1.5625
-//		- $tablet-tfw$ - turns true-fw to retina 768px - scl=5.208334
-//		- $tablet-efw$ - turns true-fw to retina 768px with crop - scl=1.5625&cropN=0.18,0,0.64,1
+//		TO DO
+//
+//		- $tablet-tfw$ - turns true-fw to width 1536px - scl=2.60416666666667
+//		- $tablet-efw$ - turns extend-fw to width 1536px - scl=1.667&cropN=0.18,0,0.64,1
+//		- $tablet-img$ - turns standard image to width 1536px - scl=1.5625 // *same as below so will use that image preset*
 //
 //		- $desktop-sm$ - turns true-fw to width 1280px - scl=3.125
 //		- $retina-sm$ - turns true-fw to width 2560px - scl=1.5625
@@ -23,8 +25,9 @@
 
 //	MEDIA QUERIES
 
-$desktop : "(min-width: 701px)";
-$retina : "(min-width: 701px) and (min-resolution: 192dpi)";
+$desktop-small : "(min-width: 701px)";
+$tablet : "(min-width: 701px) and (max-width: 768px) and (min-resolution: 192dpi) ";
+$retina-small : "(min-width: 769px) and (min-resolution: 192dpi)";
 
 $desktop-medium : "(min-width: 1281px)";
 $retina-medium : "(min-width: 1281px) and (min-resolution: 192dpi)";
@@ -39,32 +42,36 @@ $retina-large : "(min-width: 1441px) and (min-resolution: 192dpi)";
 	background-image: url('#{$url}?$mobile$');
 	padding-bottom: $padding-bottom;
 
-	@media #{$desktop} {
+	@media #{$desktop-small} {
 		display: none;
 	}
 
 }
 
-@mixin image ($url, $padding-bottom) {
+@mixin image($url, $padding-bottom) {
 
-	@media #{$desktop} {
+	@media #{$desktop-small} {
 		background-image: url('#{$url}?$desktop$');
 		padding-bottom: $padding-bottom;
 	}
-	@media #{$retina} {
+	@media #{$retina-small} {
 		background-image: url('#{$url}?$retina$');
+	}
+
+	@media #{$tablet} {
+		background-image: url('#{$url}?$retina-sm$');
 	}
 
 }
 
 @mixin true-fw($url, $vw-height, $max-height) {
 
-	@media #{$desktop} {
+	@media #{$desktop-small} {
 		background-image: url('#{$url}?$desktop-sm$');
 		height: $vw-height;
 		max-height: $max-height;
 	}
-	@media #{$retina} {
+	@media #{$retina-small} {
 		background-image: url('#{$url}?$retina-sm$');
 	}
 	
@@ -82,15 +89,19 @@ $retina-large : "(min-width: 1441px) and (min-resolution: 192dpi)";
 		background-image: url('#{$url}?$retina$');
 	}
 
+	@media #{$tablet} {
+		background-image: url('#{$url}?$tablet-tfw$');
+	}
+
 }
 
 @mixin extend-fw($url, $padding-bottom) {
 
-	@media #{$desktop} {
+	@media #{$desktop-small} {
 		background-image: url('#{$url}?$desktop-sm_crop$');
 		padding-bottom: $padding-bottom;
 	}
-	@media #{$retina} {
+	@media #{$retina-small} {
 		background-image: url('#{$url}?$retina-sm_crop$')
 	}
 
@@ -107,6 +118,12 @@ $retina-large : "(min-width: 1441px) and (min-resolution: 192dpi)";
 	@media #{$retina-large} {
 		background-image: url('#{$url}?$retina$');
 	}
+
+	@media #{$tablet} {
+		background-image: url('#{$url}?$tablet-efw$');
+	}
 }
 
-
+.image {
+	background-size: auto 100%;
+}

@@ -16,9 +16,9 @@ gulp.task('addPaddingBottom', function(){
 		paddingBottom
 	];
 
-	return gulp.src('app/workspace/postcss-scss/*.scss')
+	return gulp.src('app/workspace/*.scss')
 	.pipe(postcss(processors, {syntax: scss}))
-	.pipe(gulp.dest('app/workspace/scss'));
+	.pipe(gulp.dest('app/intermediary/scss'));
 
 });
 
@@ -28,11 +28,12 @@ gulp.task('sass', ['addPaddingBottom'], function(){
 		autoprefixer
 	];
 
-	return gulp.src('app/workspace/scss/*.scss')
-	.pipe(sass())
-	.pipe(combineMq())
-	.pipe(postcss(processors))
-	.pipe(gulp.dest('app/workspace/css'));
+	return gulp
+    .src("app/intermediary/*.scss")
+    .pipe(sass())
+    .pipe(combineMq())
+    .pipe(postcss(processors))
+    .pipe(gulp.dest("app/output/css"));
 
 });
 

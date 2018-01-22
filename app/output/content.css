@@ -1,0 +1,408 @@
+.image {
+  background-size: auto 100%;
+}/* FR SALES BANNER */.cta-positioner {
+  position: absolute;
+  top: 57%;
+  width: 100%;
+  text-align: center;
+}/* END FR SALES *//* to position both png-text and cta-positioner */.js-clippy-container {
+  width: 100%;
+  text-align: center;
+  -webkit-animation: fade-in 1s 0.5s ease both;
+          animation: fade-in 1s 0.5s ease both;
+}
+
+.png-text {
+  margin-bottom: 6%;
+}
+
+.sticky-element-positioner {
+  -webkit-animation: fade-in 1s 0.5s ease both;
+          animation: fade-in 1s 0.5s ease both;
+}
+
+.info-strip-container {
+  background: #fff;
+}
+
+.live-cta-light--static {
+  width: 179px !important;
+  background: #edeeee !important;
+}
+
+.js-clippy-fixed {
+  height: 45%;
+  z-index: 5;
+  position: fixed;
+  left: 0;
+  top: 35%;
+  width: 100%;
+  text-align: center;
+}
+
+.z-white {
+  z-index: 10;
+  background-color: white;
+  position: relative;
+  padding-top: 1%;
+}
+
+footer {
+  background-color: white;
+  z-index: 8;
+  margin-top: 1%;
+}/* BACKGROUND IMAGES */.promo1 {
+  z-index: 1;
+ /* for the scrolling effect to lock */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.promo2 {
+  z-index: 2;
+ /* for the scrolling effect to lock */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.region-FR .hero {
+  display: none;
+}
+
+.fr-hero {
+  display: none;
+}
+
+.region-FR .fr-hero {
+  display: block;
+  margin-bottom: 1%;
+}
+
+.grazia {
+  display: none;
+}
+
+.region-UK .grazia,.region-IE .grazia {
+  display: block;
+}/* ----- TABLET ----- *//* ------ MOBILE ------ */.grazia-mob {
+  display: none;
+}
+
+.region-UK .grazia-mob,.region-IE .grazia-mob {
+  display: block;
+  background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180116_wwlp_grazia_banner_mob_DNT?$mobile$");
+  padding-bottom: 28.71%;
+}
+
+.promo1-mob {
+  background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_mob_DNT?$mobile$");
+  padding-bottom: 150%;
+  margin-bottom: 8%;
+}
+
+.promo2-mob {
+  background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_kids_mob_DNT?$mobile$");
+  padding-bottom: 150%;
+  margin-bottom: 8%;
+}
+
+.hero-mob {
+  background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_imwearingri_mob_DNT?$mobile$");
+  padding-bottom: 91.452%;
+  margin-bottom: 3%;
+}
+
+.region-FR .fr-hero-mob {
+  background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_SALE_BANNER_mob_SOLDES-DNT_fr?$mobile$");
+  padding-bottom: 103.71%;
+  margin-bottom: 3%;
+}/*INTS*/.NL,.DE,.FR,.UK {
+  display: none !important;
+}
+
+.region-EU .EU,.region-SE .SE,.region-AU .AU,.region-IE .IE,.region-US .US,.region-UK .UK,.region-NL .NL,.region-DE .DE,.region-FR .FR {
+  display: inline-block !important;
+}
+
+.region-UK .non-uk {
+  display: none !important;
+}
+
+.region-NL .none-NL {
+  display: none;
+}
+
+.region-NL .english-only,.region-FR .english-only,.region-DE .english-only {
+  display: none !important;
+}
+
+@media (min-width: 701px) {
+  .promo1 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$desktop-sm$");
+    height: 50vw;
+    max-height: 1000px;
+  }
+
+  .promo2 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_kids_DNT?$desktop-sm$");
+    height: 50vw;
+    max-height: 1000px;
+  }
+
+  .hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_imwearingri_DNT?$desktop-sm$");
+    height: 23.65vw;
+    max-height: 473px;
+  }
+
+  .region-FR .fr-hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_SALE_BANNER_desktop_SOLDES-DNT_fr?$desktop-sm$");
+    height: 14.6vw;
+    max-height: 292px;
+  }
+
+  .region-UK .grazia,.region-IE .grazia {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180116_wwlp_grazia_banner_DNT?$desktop-sm_crop$");
+    padding-bottom: 4.4%;
+  }
+
+  .region-UK .grazia-mob,.region-IE .grazia-mob {
+    display: none;
+  }
+
+  .promo1-mob {
+    display: none;
+  }
+
+  .promo2-mob {
+    display: none;
+  }
+
+  .hero-mob {
+    display: none;
+  }
+
+  .region-FR .fr-hero-mob {
+    display: none;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 701px) and (max-width: 768px) and (min-resolution: 192dpi) {
+  .promo1 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$tablet-tfw$");
+  }
+
+  .promo2 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_kids_DNT?$tablet-tfw$");
+  }
+
+  .hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_imwearingri_DNT?$tablet-tfw$");
+  }
+
+  .region-FR .fr-hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_SALE_BANNER_desktop_SOLDES-DNT_fr?$tablet-tfw$");
+  }
+
+  .region-UK .grazia,.region-IE .grazia {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180116_wwlp_grazia_banner_DNT?$tablet-efw$");
+  }
+}
+
+@media (min-width: 769px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 769px) and (min-resolution: 192dpi) {
+  .promo1 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$retina-sm$");
+  }
+
+  .promo2 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_kids_DNT?$retina-sm$");
+  }
+
+  .hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_imwearingri_DNT?$retina-sm$");
+  }
+
+  .region-FR .fr-hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_SALE_BANNER_desktop_SOLDES-DNT_fr?$retina-sm$");
+  }
+
+  .region-UK .grazia,.region-IE .grazia {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180116_wwlp_grazia_banner_DNT?$retina-sm_crop$");
+  }
+}
+
+@media (min-width: 1281px) {
+  .promo1 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$desktop-md$");
+  }
+
+  .promo2 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_kids_DNT?$desktop-md$");
+  }
+
+  .hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_imwearingri_DNT?$desktop-md$");
+  }
+
+  .region-FR .fr-hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_SALE_BANNER_desktop_SOLDES-DNT_fr?$desktop-md$");
+  }
+
+  .region-UK .grazia,.region-IE .grazia {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180116_wwlp_grazia_banner_DNT?$desktop-md_crop$");
+  }
+}
+
+@media (min-width: 1281px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1281px) and (min-resolution: 192dpi) {
+  .promo1 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$retina-md$");
+  }
+
+  .promo2 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_kids_DNT?$retina-md$");
+  }
+
+  .hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_imwearingri_DNT?$retina-md$");
+  }
+
+  .region-FR .fr-hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_SALE_BANNER_desktop_SOLDES-DNT_fr?$retina-md$");
+  }
+
+  .region-UK .grazia,.region-IE .grazia {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180116_wwlp_grazia_banner_DNT?$retina-md_crop$");
+  }
+}
+
+@media (min-width: 1441px) {
+  .promo1 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$desktop$");
+  }
+
+  .promo2 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_kids_DNT?$desktop$");
+  }
+
+  .hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_imwearingri_DNT?$desktop$");
+  }
+
+  .region-FR .fr-hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_SALE_BANNER_desktop_SOLDES-DNT_fr?$desktop$");
+  }
+
+  .region-UK .grazia,.region-IE .grazia {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180116_wwlp_grazia_banner_DNT?$desktop$");
+  }
+}
+
+@media (min-width: 1441px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1441px) and (min-resolution: 192dpi) {
+  .promo1 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$retina$");
+  }
+
+  .promo2 {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_kids_DNT?$retina$");
+  }
+
+  .hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_imwearingri_DNT?$retina$");
+  }
+
+  .region-FR .fr-hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_SALE_BANNER_desktop_SOLDES-DNT_fr?$retina$");
+  }
+
+  .region-UK .grazia,.region-IE .grazia {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180116_wwlp_grazia_banner_DNT?$retina$");
+  }
+}
+
+@media only screen and (max-width: 768px) {
+/* png text for tablet and smaller */  .png-text {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+/* REQUIRED LINKS SECTION */  .links-section {
+    position: relative;
+    width: 96%;
+    display: inline-block;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    margin: 4% 2% 2.5%;
+    padding: 1% 0;
+  }
+
+  .links-section ul:nth-child(1) {
+    border-right: solid 1px #ccc;
+  }
+
+  .links-section ul:nth-child(3) {
+    border-right: solid 1px #ccc;
+  }
+
+  .links-section ul {
+    width: 50%;
+    height: auto;
+    float: left;
+    clear: right;
+    text-align: center;
+    padding: 3%;
+    box-sizing: border-box;
+    margin: 0 !important;
+  }
+
+  .links-section ul li a {
+    color: black;
+    display: block;
+    padding: 3% 1%;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+
+  .links-section ul li a:before,a::after {
+    content: "";
+    left: 0;
+    position: relative;
+    top: 50%;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

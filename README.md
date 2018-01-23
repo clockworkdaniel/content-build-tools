@@ -2,7 +2,7 @@
 
 ### How To Use:
 
-First make sure you have installed the node modules in the outer [package.json](/package.json) and also in [app/postcss-plugin/package.json](app/postcss-plugin/package.json)
+First make sure you have installed the node modules in the outer [package.json](/package.json) and also in [app/postcss-plugin/package.json](app/postcss-plugin/package.json), and that [gulp is installed](https://gulpjs.org/getting-started)
 
 Run ```gulp watch```
 

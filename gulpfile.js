@@ -53,13 +53,13 @@ gulp.task('babel', function(){
 		.pipe(babel({
 			presets: ['env']
 		}))
-		.pipe(gulp.dest('app/output'))
+		.pipe(gulp.dest('app/output'));
 
 });
 
 
 
-gulp.task("watch", ['sass', 'babel', 'lint'], function() {
+gulp.task("watch", ['sass', 'babel'], function() {
 	gulp.watch("app/workspace/*.scss", ["sass"]);
-	gulp.watch("app/workspace/*.js", ["babel", "lint"]);
+	gulp.watch("app/workspace/*.js", ["babel"]);
 });

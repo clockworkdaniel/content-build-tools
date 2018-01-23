@@ -1,1 +1,0 @@
-let myThing = 2;

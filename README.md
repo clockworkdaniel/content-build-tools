@@ -7,7 +7,7 @@ First clone/download this repo (see the green button top right).
 #### Install gulp globaly: 
 In terminal run ```npm install --global gulp-cli``` or if that fails try ```sudo npm install --global gulp-cli```
 
-#### Install node modules
+#### Install node modules:
 - Open the content-build-tools directory in Visual Studio Code (VSC)
 - Open the terminal in VSC (view -> intergrated terminal)
 - Run ```npm install``` in the content-build-tools directory (this is where you should already be)

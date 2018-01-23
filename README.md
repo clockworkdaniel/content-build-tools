@@ -36,10 +36,10 @@ Run ```gulp watch```
 
 ### How It works:
 
-Your Sass in [/app/workspace](/app/workspace) is parsed with [PostCSS](http://postcss.org/).
-In short, PostCSS is 'A tool for transforming CSS with JavaScript'.
-We use a [custom postcss-plugin](/app/postcss-plugin/index.js) to automatically work out padding-bottoms etc.
-The resulting Sass is stored in [/app/intermediary](/app/intermediary).
-This Sass is then compiled into [/app/output](/app/output).
+- Your Sass in [/app/workspace](/app/workspace) is parsed with [PostCSS](http://postcss.org/).
+  - In short, PostCSS is 'A tool for transforming CSS with JavaScript'.
+- We use a [custom postcss-plugin](/app/postcss-plugin/index.js) to automatically work out padding-bottoms etc.
+- The resulting Sass is stored in [/app/intermediary](/app/intermediary).
+- This Sass is then compiled into [/app/output](/app/output).
 
 

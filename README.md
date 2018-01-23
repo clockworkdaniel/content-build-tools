@@ -1,6 +1,6 @@
 # Content Build Tools
 
-### How To Install:
+## How To Install:
 
 First clone/download this repo (see the green button top right).
 
@@ -16,7 +16,7 @@ In terminal run ```npm install --global gulp-cli``` or if that fails try ```sudo
 - Navigate back to content-build-tools with ```cd ../../```
 
 
-### How To Use:
+## How To Use:
 
 Run ```gulp watch```
 
@@ -34,7 +34,7 @@ Run ```gulp watch```
 - Once you've finished your page upload your content.scss file to the trello ticket for the next developer to use
 
 
-### How It works:
+## How It works:
 
 - Your Sass in [/app/workspace](/app/workspace) is parsed with [PostCSS](http://postcss.org/).
   - In short, PostCSS is 'A tool for transforming CSS with JavaScript'.

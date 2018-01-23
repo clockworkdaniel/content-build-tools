@@ -8,14 +8,14 @@ Run ```gulp watch```
 
 - Write your sass in [/app/workspace/content.scss](/app/workspace/content.scss)
 - When doing so use the mixins set out in [/app/workspace/config.scss](/app/workspace/config.scss)
-
 - Feel free to write your own useful mixins and share them with your fellow developers
-
 - You can store the html of the page your currently working on in [workspace.html](/app/workspace/workspace.html)
+- Once you've finished your page upload your content.scss file to the trello ticket
+
 
 ### How It works:
 
-Your Sass in [/app/workspace] is parsed with [PostCSS](http://postcss.org/).
+Your Sass in [/app/workspace](/app/workspace) is parsed with [PostCSS](http://postcss.org/).
 In short PostCSS is 'A tool for transforming CSS with JavaScript'.
 We use a [custom postcss-plugin](/app/postcss-plugin/index.js) to automatically work out padding bottoms etc.
 

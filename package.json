@@ -10,9 +10,13 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.12.1",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "gulp-combine-mq": "^0.4.0",
+    "gulp-eslint": "^4.0.1",
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^2.2.0",
     "image-size": "^0.5.1",

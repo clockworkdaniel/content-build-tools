@@ -2,7 +2,7 @@
 
 ### How To Install:
 
-#### Clone/download this repo (see the green button top right).
+First clone/download this repo (see the green button top right).
 
 #### Install gulp globaly: 
 In terminal run ```npm install --global gulp-cli``` or if that fails try ```sudo npm install --global gulp-cli```

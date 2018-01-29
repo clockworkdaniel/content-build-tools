@@ -6,29 +6,30 @@ var https = require('https');
 var postcss = require('postcss');
 var sizeOf = require('image-size');
 
-module.exports = postcss.plugin('padding', function padding(options) {
+module.exports = postcss.plugin('padding', function padding() {
 
 	var calculate = function(thisInclude, rule, dimensions) {
 
 		let paddingBottom;
+		let height =  dimensions.height;
 		let vwHeight;
 		let maxHeight;
-		let finalParams;
+		let finalParams;		
 
 		if (thisInclude === "mobile") {
-			paddingBottom = dimensions.height/620 * 100;
+			paddingBottom = height/620 * 100;
 			finalParams = ", " + paddingBottom.toFixed(3) + "% )";
 		} else if (thisInclude === "image" || thisInclude === "extend-fw") {
-			paddingBottom = dimensions.height / 4000 * 100;
+			paddingBottom = height / 4000 * 100;
 			finalParams = ", " + paddingBottom.toFixed(3) + "% )";
 		} else if (thisInclude === "true-fw") {
-			vwHeight = dimensions.height / 4000 * 100;
+			vwHeight = height / 4000 * 100;
 			vwHeight = ", " + vwHeight.toFixed(3) + "vw";
-			maxHeight = ", " + dimensions.height/2+"px )";
+			maxHeight = ", " + height/2+"px )";
 			finalParams = vwHeight + maxHeight;
 		}
 
-		newRule = "@include " + rule.params.substring(0, rule.params.length - 1) + finalParams;
+		let newRule = "@include " + rule.params.substring(0, rule.params.length - 1) + finalParams;
 
 		return newRule;
 
@@ -49,9 +50,9 @@ module.exports = postcss.plugin('padding', function padding(options) {
 				//add preset to the image URL so that its height is correct for the calculation
 				let urlWithPreset = imageUrl + "?$retina$";
 				//parse the url ready for http.get
-				let options = url.parse(urlWithPreset);
+				let urlObject = url.parse(urlWithPreset);
 
-				var includePromise = transformInclude(thisInclude, rule, options);
+				var includePromise = transformInclude(thisInclude, rule, urlObject);
 
 				includes.push(includePromise);
 			}
@@ -63,22 +64,30 @@ module.exports = postcss.plugin('padding', function padding(options) {
 		
 	};
 
-	var transformInclude = function(thisInclude, rule, options) {
+	var transformInclude = function(thisInclude, rule, urlObject) {
 
 		var httpPromise = new Promise(function(resolve){
 
-			https.get(options, function (response) {
+			https.get(urlObject, function (response) {
+
 				let chunks = [];
 				response.on('data', function (chunk) {
 					chunks.push(chunk);
 				}).on('end', function() {
+
 					let buffer = Buffer.concat(chunks);
-					let dimensions = sizeOf(buffer);
-
-					let newRule = calculate(thisInclude, rule, dimensions);			
-
+					let newRule;
+					
+					try {
+						let dimensions = sizeOf(buffer);
+						newRule = calculate(thisInclude, rule, dimensions);
+					} catch(err) {
+						console.error('Error: ' + urlObject.href + ' is missing or wrong file type');
+						newRule = '/*image – '  + urlObject.href + ' – is missing or the wrong file type*/';
+					}
+					
 					resolve(newRule);
-
+					
 				});
 			});
 		});

@@ -2,46 +2,6 @@
   background-size: auto 100%;
 }
 
-@media (min-width: 701px) {
-  .promo1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$desktop-sm$");
-    height: 50vw;
-    max-height: 1000px;
-  }
-}
-
-@media (min-width: 701px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 701px) and (max-width: 768px) and (min-resolution: 192dpi) {
-  .promo1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$tablet-tfw$");
-  }
-}
-
-@media (min-width: 769px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 769px) and (min-resolution: 192dpi) {
-  .promo1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$retina-sm$");
-  }
-}
-
-@media (min-width: 1281px) {
-  .promo1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$desktop-md$");
-  }
-}
-
-@media (min-width: 1281px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1281px) and (min-resolution: 192dpi) {
-  .promo1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$retina-md$");
-  }
-}
-
-@media (min-width: 1441px) {
-  .promo1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$desktop$");
-  }
-}
-
-@media (min-width: 1441px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1441px) and (min-resolution: 192dpi) {
-  .promo1 {
-    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT?$retina$");
-  }
+.promo1 {
+ /*image https://riverisland.scene7.com/is/image/RiverIsland/imaginary-image?$retina$ is missing or the wrong file type*/;
 }

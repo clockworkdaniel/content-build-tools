@@ -1,5 +1,8 @@
 @import 'config';
 
-.promo1 {
-    @include true-fw('https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT');
-}
+@include image(
+  $name: 'hero',
+  $flush: 'r',
+  $marginBottom: 40px,
+  $urlDE: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180208_wwlp_hero_DNT_de'
+);

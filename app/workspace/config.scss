@@ -36,10 +36,36 @@ $desktop-large : "(min-width: 1441px)";
 $retina-large : "(min-width: 1441px) and (min-resolution: 192dpi)";
 
 // MIXINS
+// @mixin component($conf: ()) {
+//   // Extending the default arguments with the given object
+//   $conf: extend((
+//     size: 100%,
+//     theme: dark,
+//     duration: 250ms,
+//     name: 'component',
+//     border: true
+//   ), $conf);
+
+//   // Dumping CSS
+//   .#{map-get($conf, name)} {
+//     width: map-get($conf, size);
+//     animation: fade map-get($conf, duration);
+
+//     $theme: map-get($conf, theme);
+//     @if $theme == "dark" {
+//       background: #333;
+//       color: #FEFEFE;
+//     }
+//     @else if $theme == "light" {
+//       background: #FEFEFE;
+//       color: #333;
+//     }
+//   }
+// }
 
 @mixin mobile($url, $padding-bottom) {
 	
-	background-image: url('#{$url}?$mobile$');
+	background-image: url('#{$url}?r&$mobile$');
 	padding-bottom: $padding-bottom;
 
 	@media #{$desktop-small} {
@@ -48,80 +74,1086 @@ $retina-large : "(min-width: 1441px) and (min-resolution: 192dpi)";
 
 }
 
-@mixin image($url, $padding-bottom) {
+@mixin image( $name: 'promo',
+              $url: '',
+              $urlUK : '',
+              $urlUS : '',
+              $urlAU : '',
+              $urlEU : '',
+              $urlSE : '',
+              $urlIE : '',
+              $urlFR : '',
+              $urlDE : '',
+              $urlNL : '',
+              $marginTop : '',
+              $marginBottom : '',
+              $paddingBottom : '',
+              $flush: ''  ) {
 
-	@media #{$desktop-small} {
-		background-image: url('#{$url}?$desktop$');
-		padding-bottom: $padding-bottom;
-	}
-	@media #{$retina-small} {
-		background-image: url('#{$url}?$retina$');
-	}
+  
+  .#{$name} {
 
-	@media #{$tablet} {
-		background-image: url('#{$url}?$retina-sm$');
-	}
+    @media #{$desktop-small} {
+
+      padding-bottom: $paddingBottom;
+
+      @if $marginTop != '' {
+        margin-top: $marginTop;
+      }
+
+      @if $marginBottom != '' {
+        margin-bottom: $marginBottom;
+      }
+
+      @if $url != '' {
+        background-image: url('#{$url}?#{$flush}&$desktop$');
+      } @else {
+        display: none;
+      }
+      
+    }
+
+    @if $url != '' {
+      @media #{$retina-small} {
+        background-image: url('#{$url}?#{$flush}&$retina$');
+      }    
+      @media #{$tablet} {
+        background-image: url('#{$url}?#{$flush}&$retina-sm$');
+      }
+    }
+
+  }
+
+  @if $urlUK != '' {
+
+    .region-UK .#{$name} {
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlUK}?#{$flush}&$desktop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlUK}?#{$flush}&$retina$');
+      }
+      @media #{$tablet} {
+        background-image: url('#{$urlUK}?#{$flush}&$retina-sm$');
+      }
+    }
+
+  }
+
+  @if $urlUS != '' {
+
+    .region-US .#{$name} {
+      @media #{$desktop-small} {
+        
+        background-image: url('#{$urlUS}?#{$flush}&$desktop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+      @media #{$retina-small} {
+        background-image: url('#{$urlUS}?#{$flush}&$retina$');
+      }
+    
+      @media #{$tablet} {
+        background-image: url('#{$urlUS}?#{$flush}&$retina-sm$');
+      }
+    }
+  }
+
+  @if $urlAU != '' {
+
+    .region-AU .#{$name} {
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlAU}?#{$flush}&$desktop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+      @media #{$retina-small} {
+        background-image: url('#{$urlAU}?#{$flush}&$retina$');
+      }
+    
+      @media #{$tablet} {
+        background-image: url('#{$urlAU}?#{$flush}&$retina-sm$');
+      }
+    }
+  }
+
+  @if $urlEU != '' {
+
+    .region-EU .#{$name} {
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlEU}?#{$flush}&$desktop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+      @media #{$retina-small} {
+        background-image: url('#{$urlEU}?#{$flush}&$retina$');
+      }
+    
+      @media #{$tablet} {
+        background-image: url('#{$urlEU}?#{$flush}&$retina-sm$');
+      }
+    }
+  }
+
+  @if $urlSE != '' {
+
+    .region-SE .#{$name} {
+      @media #{$desktop-small} {
+        
+        background-image: url('#{$urlSE}?#{$flush}&$desktop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+      @media #{$retina-small} {
+        background-image: url('#{$urlSE}?#{$flush}&$retina$');
+      }
+    
+      @media #{$tablet} {
+        background-image: url('#{$urlSE}?#{$flush}&$retina-sm$');
+      }
+    }
+  }
+
+  @if $urlIE != '' {
+
+    .region-IE .#{$name} {
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlIE}?#{$flush}&$desktop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+      @media #{$retina-small} {
+        background-image: url('#{$urlIE}?#{$flush}&$retina$');
+      }
+    
+      @media #{$tablet} {
+        background-image: url('#{$urlIE}?#{$flush}&$retina-sm$');
+      }
+    }
+  }
+
+  @if $urlFR != '' {
+
+    .region-FR .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlFR}?#{$flush}&$desktop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+      @media #{$retina-small} {
+        background-image: url('#{$urlFR}?#{$flush}&$retina$');
+      }
+    
+      @media #{$tablet} {
+        background-image: url('#{$urlFR}?#{$flush}&$retina-sm$');
+      }
+    }
+  }
+
+  @if $urlDE != '' {
+
+    .region-DE .#{$name} {
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlDE}?#{$flush}&$desktop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+      @media #{$retina-small} {
+        background-image: url('#{$urlDE}?#{$flush}&$retina$');
+      }
+    
+      @media #{$tablet} {
+        background-image: url('#{$urlDE}?#{$flush}&$retina-sm$');
+      }
+    }
+  }
+
+  @if $urlNL != '' {
+
+    .region-NL .#{$name} {
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlNL}?#{$flush}&$desktop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+      @media #{$retina-small} {
+        background-image: url('#{$urlNL}?#{$flush}&$retina$');
+      }
+    
+      @media #{$tablet} {
+        background-image: url('#{$urlNL}?#{$flush}&$retina-sm$');
+      }
+    }
+  }
 
 }
 
-@mixin true-fw($url, $vw-height, $max-height) {
+@mixin true-fw( $name: 'promo',
+              $url: '',
+              $urlUK : '',
+              $urlUS : '',
+              $urlAU : '',
+              $urlEU : '',
+              $urlSE : '',
+              $urlIE : '',
+              $urlFR : '',
+              $urlDE : '',
+              $urlNL : '',
+              $marginTop : '',
+              $marginBottom : '',
+              $vwHeight : '',
+              $pxHeight : '',
+              $flush: ''  ) {
 
-	@media #{$desktop-small} {
-		background-image: url('#{$url}?$desktop-sm$');
-		height: $vw-height;
-		max-height: $max-height;
-	}
-	@media #{$retina-small} {
-		background-image: url('#{$url}?$retina-sm$');
-	}
-	
-	@media #{$desktop-medium}{
-		background-image: url('#{$url}?$desktop-md$');
-	}
-	@media #{$retina-medium}{
-		background-image: url('#{$url}?$retina-md$');
-	}
+  .#{$name} {
 
-	@media #{$desktop-large}{
-		background-image: url('#{$url}?$desktop$');
-	}
-	@media #{$retina-large}{
-		background-image: url('#{$url}?$retina$');
-	}
+    @media #{$desktop-small} {
 
-	@media #{$tablet} {
-		background-image: url('#{$url}?$tablet-tfw$');
-	}
+      height: $vwHeight;
+      max-height: $pxHeight;
+      
+      @if $marginTop != '' {
+        margin-top: $marginTop;
+      }
+
+      @if $marginBottom != '' {
+        margin-bottom: $marginBottom;
+      }
+
+      @if $url != '' {
+        background-image: url('#{$url}?#{$flush}$desktop-sm$');
+      } @else {
+        display: none;
+      }
+      
+    }
+
+
+    @if $url != '' {
+      @media #{$retina-small} {
+        background-image: url('#{$url}?#{$flush}&$retina-sm$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$url}?#{$flush}&$desktop-md$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$url}?#{$flush}&$retina-md$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$url}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$url}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$url}?#{$flush}&$tablet-tfw$');
+      }
+    }
+
+  }
+
+  @if $urlUK != '' {
+
+    .region-UK .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlUK}?#{$flush}&$desktop-sm$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlUK}?#{$flush}&$retina-sm$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlUK}?#{$flush}&$desktop-md$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlUK}?#{$flush}&$retina-md$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlUK}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlUK}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlUK}?#{$flush}&$tablet-tfw$');
+      }
+    }
+
+  }
+
+  @if $urlUS != '' {
+
+    .region-US .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlUS}?#{$flush}&$desktop-sm$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlUS}?#{$flush}&$retina-sm$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlUS}?#{$flush}&$desktop-md$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlUS}?#{$flush}&$retina-md$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlUS}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlUS}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlUS}?#{$flush}&$tablet-tfw$');
+      }
+    }
+
+  }
+
+  @if $urlAU != '' {
+
+    .region-AU .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlAU}?#{$flush}&$desktop-sm$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlAU}?#{$flush}&$retina-sm$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlAU}?#{$flush}&$desktop-md$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlAU}?#{$flush}&$retina-md$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlAU}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlAU}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlAU}?#{$flush}&$tablet-tfw$');
+      }
+    }
+  }
+
+  @if $urlEU != '' {
+
+    .region-EU .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlEU}?#{$flush}&$desktop-sm$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlEU}?#{$flush}&$retina-sm$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlEU}?#{$flush}&$desktop-md$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlEU}?#{$flush}&$retina-md$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlEU}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlEU}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlEU}?#{$flush}&$tablet-tfw$');
+      }
+    }
+  }
+
+  @if $urlSE != '' {
+
+    .region-SE .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlSE}?#{$flush}&$desktop-sm$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlSE}?#{$flush}&$retina-sm$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlSE}?#{$flush}&$desktop-md$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlSE}?#{$flush}&$retina-md$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlSE}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlSE}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlSE}?#{$flush}&$tablet-tfw$');
+      }
+    }
+  }
+
+  @if $urlIE != '' {
+
+    .region-IE .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlIE}?#{$flush}&$desktop-sm$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlIE}?#{$flush}&$retina-sm$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlIE}?#{$flush}&$desktop-md$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlIE}?#{$flush}&$retina-md$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlIE}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlIE}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlIE}?#{$flush}&$tablet-tfw$');
+      }
+    }
+  }
+
+  @if $urlFR != '' {
+
+    .region-FR .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlFR}?#{$flush}&$desktop-sm$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlFR}?#{$flush}&$retina-sm$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlFR}?#{$flush}&$desktop-md$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlFR}?#{$flush}&$retina-md$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlFR}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlFR}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlFR}?#{$flush}&$tablet-tfw$');
+      }
+    }
+
+  }
+
+  @if $urlDE != '' {
+
+    .region-DE .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlDE}?#{$flush}&$desktop-sm$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlDE}?#{$flush}&$retina-sm$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlDE}?#{$flush}&$desktop-md$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlDE}?#{$flush}&$retina-md$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlDE}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlDE}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlDE}?#{$flush}&$tablet-tfw$');
+      }
+    }
+    
+  }
+
+  @if $urlNL != '' {
+
+    .region-NL .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlNL}?#{$flush}&$desktop-sm$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlNL}?#{$flush}&$retina-sm$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlNL}?#{$flush}&$desktop-md$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlNL}?#{$flush}&$retina-md$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlNL}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlNL}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlNL}?#{$flush}&$tablet-tfw$');
+      }
+    }
+
+  }
 
 }
 
-@mixin extend-fw($url, $padding-bottom) {
+@mixin extend-fw( $name: 'promo',
+                  $url: '',
+                  $urlUK : '',
+                  $urlUS : '',
+                  $urlAU : '',
+                  $urlEU : '',
+                  $urlSE : '',
+                  $urlIE : '',
+                  $urlFR : '',
+                  $urlDE : '',
+                  $urlNL : '',
+                  $marginTop : '',
+                  $marginBottom : '',
+                  $paddingBottom : '',
+                  $flush: ''  ) {
 
-	@media #{$desktop-small} {
-		background-image: url('#{$url}?$desktop-sm_crop$');
-		padding-bottom: $padding-bottom;
-	}
-	@media #{$retina-small} {
-		background-image: url('#{$url}?$retina-sm_crop$')
-	}
+  .#{$name} {
 
-	@media #{$desktop-medium} {
-		background-image: url('#{$url}?$desktop-md_crop$');
-	}
-	@media #{$retina-medium} {
-		background-image: url('#{$url}?$retina-md_crop$');
-	}
+    @media #{$desktop-small} {
 
-	@media #{$desktop-large} {
-		background-image: url('#{$url}?$desktop$');
-	}
-	@media #{$retina-large} {
-		background-image: url('#{$url}?$retina$');
-	}
+      padding-bottom: $paddingBottom;
+      
+      @if $marginTop != '' {
+        margin-top: $marginTop;
+      }
 
-	@media #{$tablet} {
-		background-image: url('#{$url}?$tablet-efw$');
-	}
+      @if $marginBottom != '' {
+        margin-bottom: $marginBottom;
+      }
+		
+      @if $url != '' {
+        background-image: url('#{$url}?r&$desktop-sm_crop$');
+      } @else {
+        display: none;
+      }
+      
+    }
+
+
+    @if $url != '' {
+      @media #{$retina-small} {
+        background-image: url('#{$url}?#{$flush}&$retina-sm_crop$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$url}?#{$flush}&$desktop-md_crop$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$url}?#{$flush}&$retina-md_crop$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$url}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$url}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$url}?#{$flush}&$tablet-efw$');
+      }
+    }
+
+  }
+
+  @if $urlUK != '' {
+
+    .region-UK .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlUK}?#{$flush}&$desktop-sm_crop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlUK}?#{$flush}&$retina-sm_crop$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlUK}?#{$flush}&$desktop-md_crop$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlUK}?#{$flush}&$retina-md_crop$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlUK}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlUK}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlUK}?#{$flush}&$tablet-efw$');
+      }
+    }
+
+  }
+
+  @if $urlUS != '' {
+
+    .region-US .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlUS}?#{$flush}&$desktop-sm_crop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlUS}?#{$flush}&$retina-sm_crop$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlUS}?#{$flush}&$desktop-md_crop$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlUS}?#{$flush}&$retina-md_crop$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlUS}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlUS}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlUS}?#{$flush}&$tablet-efw$');
+      }
+    }
+
+  }
+
+  @if $urlAU != '' {
+
+    .region-AU .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlAU}?#{$flush}&$desktop-sm_crop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlAU}?#{$flush}&$retina-sm_crop$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlAU}?#{$flush}&$desktop-md_crop$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlAU}?#{$flush}&$retina-md_crop$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlAU}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlAU}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlAU}?#{$flush}&$tablet-efw$');
+      }
+    }
+  }
+
+  @if $urlEU != '' {
+
+    .region-EU .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlEU}?#{$flush}&$desktop-sm_crop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlEU}?#{$flush}&$retina-sm_crop$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlEU}?#{$flush}&$desktop-md_crop$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlEU}?#{$flush}&$retina-md_crop$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlEU}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlEU}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlEU}?#{$flush}&$tablet-efw$');
+      }
+    }
+  }
+
+  @if $urlSE != '' {
+
+    .region-SE .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlSE}?#{$flush}&$desktop-sm_crop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlSE}?#{$flush}&$retina-sm_crop$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlSE}?#{$flush}&$desktop-md_crop$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlSE}?#{$flush}&$retina-md_crop$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlSE}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlSE}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlSE}?#{$flush}&$tablet-efw$');
+      }
+    }
+  }
+
+  @if $urlIE != '' {
+
+    .region-IE .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlIE}?#{$flush}&$desktop-sm_crop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlIE}?#{$flush}&$retina-sm_crop$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlIE}?#{$flush}&$desktop-md_crop$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlIE}?#{$flush}&$retina-md_crop$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlIE}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlIE}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlIE}?#{$flush}&$tablet-efw$');
+      }
+    }
+  }
+
+  @if $urlFR != '' {
+
+    .region-FR .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlFR}?#{$flush}&$desktop-sm_crop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlFR}?#{$flush}&$retina-sm_crop$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlFR}?#{$flush}&$desktop-md_crop$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlFR}?#{$flush}&$retina-md_crop$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlFR}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlFR}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlFR}?#{$flush}&$tablet-efw$');
+      }
+    }
+
+  }
+
+  @if $urlDE != '' {
+
+    .region-DE .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlDE}?#{$flush}&$desktop-sm_crop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlDE}?#{$flush}&$retina-sm_crop$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlDE}?#{$flush}&$desktop-md_crop$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlDE}?#{$flush}&$retina-md_crop$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlDE}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlDE}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlDE}?#{$flush}&$tablet-efw$');
+      }
+    }
+    
+  }
+
+  @if $urlNL != '' {
+
+    .region-NL .#{$name} {
+
+      @media #{$desktop-small} {
+
+        background-image: url('#{$urlNL}?#{$flush}&$desktop-sm_crop$');
+
+        @if $url == '' {
+          display: block;
+        }
+
+      }
+
+      @media #{$retina-small} {
+        background-image: url('#{$urlNL}?#{$flush}&$retina-sm_crop$');
+      }
+      
+      @media #{$desktop-medium}{
+        background-image: url('#{$urlNL}?#{$flush}&$desktop-md_crop$');
+      }
+      @media #{$retina-medium}{
+        background-image: url('#{$urlNL}?#{$flush}&$retina-md_crop$');
+      }
+
+      @media #{$desktop-large}{
+        background-image: url('#{$urlNL}?#{$flush}&$desktop$');
+      }
+      @media #{$retina-large}{
+        background-image: url('#{$urlNL}?#{$flush}&$retina$');
+      }
+
+      @media #{$tablet} {
+        background-image: url('#{$urlNL}?#{$flush}&$tablet-efw$');
+      }
+    }
+
+  }
+
 }
 
 .image {

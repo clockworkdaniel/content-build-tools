@@ -22,11 +22,31 @@ Run ```gulp watch```
 
 - Write your sass in [/app/workspace/content.scss](/app/workspace/content.scss)
 - Whenever you save your [/app/output/content.css](/app/output/content.css) will be updated
-- You can use mixins set out in [/app/workspace/config.scss](/app/workspace/config.scss) e.g.
-  - note you do not need to include padding-bottoms/VW heights as the the PostCSS plugin will do this for you:
+- You can use mixins set out in [/app/workspace/config.scss](/app/workspace/config.scss)
+  - note I've changed our mixins to use [variable arguments](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_arguments) so we can add an optional flush or region specific images
+  - you do not need to include padding-bottoms/VW heights as the the PostCSS plugin will work these out for you:
 ```scss 
     .example {
-        @include true-fw('https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT');
+        @include true-fw(
+          $name: '[CLASS GOES HERE]',
+          $url: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT',
+          //optional flush
+          $flush '_r',
+          //example hard coded regional images
+          $urlDE: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_de',
+          $urlUS: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_int',
+          //you can set a margin-bottom/margin-top here if you want
+          $marginTop: 4%
+        );
+    }
+```
+  - if you only set only international versions the image will be ```display: none;``` except on the relevant regions
+```scss 
+    .intl-only-example {
+      @include image(
+        $urlUS: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_int',
+        $urlEU: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_int'
+      );
     }
 ```
 - You can store the html of the page your currently working on in [workspace.html](/app/workspace/workspace.html)
@@ -41,5 +61,3 @@ Run ```gulp watch```
 - We use a [custom postcss-plugin](/app/postcss-plugin/index.js) to automatically work out padding-bottoms etc.
 - The resulting Sass is stored in [/app/intermediary](/app/intermediary).
 - This Sass is then compiled into [/app/output](/app/output).
-
-

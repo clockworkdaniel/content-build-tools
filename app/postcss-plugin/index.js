@@ -13,20 +13,20 @@ module.exports = postcss.plugin('padding', function padding() {
 		let paddingBottom;
 		let height =  dimensions.height;
 		let vwHeight;
-		let maxHeight;
+		let pxHeight;
 		let finalParams;		
 
 		if (thisInclude === "mobile") {
 			paddingBottom = height/620 * 100;
-			finalParams = ", " + paddingBottom.toFixed(3) + "% )";
+			finalParams = ", $paddingBottom: " + paddingBottom.toFixed(3) + "% )";
 		} else if (thisInclude === "image" || thisInclude === "extend-fw") {
 			paddingBottom = height / 4000 * 100;
-			finalParams = ", " + paddingBottom.toFixed(3) + "% )";
+			finalParams = ", $paddingBottom: " + paddingBottom.toFixed(3) + "% )";
 		} else if (thisInclude === "true-fw") {
 			vwHeight = height / 4000 * 100;
-			vwHeight = ", " + vwHeight.toFixed(3) + "vw";
-			maxHeight = ", " + height/2+"px )";
-			finalParams = vwHeight + maxHeight;
+			vwHeight = ", $vwHeight: " + vwHeight.toFixed(3) + "vw";
+			pxHeight = ", $pxHeight: " + height/2+ "px )";
+			finalParams = vwHeight + pxHeight;
 		}
 
 		let newRule = "@include " + rule.params.substring(0, rule.params.length - 1) + finalParams;
@@ -46,15 +46,22 @@ module.exports = postcss.plugin('padding', function padding() {
 			if (thisInclude === "extend-fw" || thisInclude === "image" || thisInclude === "true-fw" || thisInclude === "mobile") {
 				let params = rule.params;
 				//get the image URL from the include parameters
-				let imageUrl = params.indexOf("'") > -1 ? params.split("'")[1] : params.split('"')[1];
-				//add preset to the image URL so that its height is correct for the calculation
-				let urlWithPreset = imageUrl + "?$retina$";
-				//parse the url ready for http.get
-				let urlObject = url.parse(urlWithPreset);
+				//use regex to return the first url in quotes
+				try {
+					let pattern = /(?:'|")(https:\S*)(?:'|")/;
+					//[1] returns capture group rather than entire match - ie excludes quotes
+					var imageUrl = params.match(pattern)[1];
+					//add preset to the image URL so that its height is correct for the calculation
+					let urlWithPreset = imageUrl + "?$retina$";
+					//parse the url ready for http.get
+					let urlObject = url.parse(urlWithPreset);
 
-				var includePromise = transformInclude(thisInclude, rule, urlObject);
+					var includePromise = transformInclude(thisInclude, rule, urlObject);
 
-				includes.push(includePromise);
+					includes.push(includePromise);
+				} catch(err) {
+					console.error('Error: @include is missing https:// URL');
+				}
 			}
 		});
 
@@ -83,7 +90,7 @@ module.exports = postcss.plugin('padding', function padding() {
 						newRule = calculate(thisInclude, rule, dimensions);
 					} catch(err) {
 						console.error('Error: ' + urlObject.href + ' is missing or wrong file type');
-						newRule = '/*image – '  + urlObject.href + ' – is missing or the wrong file type*/';
+						newRule = '\r/*image – '  + urlObject.href + ' – is missing or the wrong file type*/';
 					}
 					
 					resolve(newRule);

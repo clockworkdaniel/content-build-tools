@@ -26,28 +26,26 @@ Run ```gulp watch```
   - note I've changed our mixins to use [variable arguments](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_arguments) so we can add an optional flush or region specific images
   - you do not need to include padding-bottoms/VW heights as the the PostCSS plugin will work these out for you:
 ```scss 
-    .example {
-        @include true-fw(
-          $name: '[CLASS GOES HERE]',
-          $url: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT',
-          //optional flush
-          $flush '_r',
-          //example hard coded regional images
-          $urlDE: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_de',
-          $urlUS: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_int',
-          //you can set a margin-bottom/margin-top here if you want
-          $marginTop: 4%
-        );
-    }
+      @include true-fw(
+        $name: '[CLASS GOES HERE]',
+        $url: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT',
+        //optional flush
+        $flush '_r',
+        //example hard coded regional images
+        $urlDE: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_de',
+        $urlUS: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_int',
+        //you can set a margin-bottom/margin-top here if you want
+        $marginTop: 4%
+      );
 ```
   - if you only set only international versions the image will be ```display: none;``` except on the relevant regions
 ```scss 
-    .intl-only-example {
       @include image(
+        $name: 'intl-only-image',
         $urlUS: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_int',
         $urlEU: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_int'
       );
-    }
+    
 ```
 - You can store the html of the page your currently working on in [workspace.html](/app/workspace/workspace.html)
 - Feel free to write your own useful mixins and share them with your fellow developers

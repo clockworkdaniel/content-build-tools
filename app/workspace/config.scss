@@ -25,6 +25,8 @@
 
 //	MEDIA QUERIES
 
+$mobile : "(max-width: 700px)";
+
 $desktop-small : "(min-width: 701px)";
 $tablet : "(min-width: 701px) and (max-width: 768px) and (min-resolution: 192dpi) ";
 $retina-small : "(min-width: 769px) and (min-resolution: 192dpi)";
@@ -35,42 +37,181 @@ $retina-medium : "(min-width: 1281px) and (min-resolution: 192dpi)";
 $desktop-large : "(min-width: 1441px)";
 $retina-large : "(min-width: 1441px) and (min-resolution: 192dpi)";
 
-// MIXINS
-// @mixin component($conf: ()) {
-//   // Extending the default arguments with the given object
-//   $conf: extend((
-//     size: 100%,
-//     theme: dark,
-//     duration: 250ms,
-//     name: 'component',
-//     border: true
-//   ), $conf);
+@mixin mobile( $name: 'promo',
+              $url: '',
+              $urlUK : '',
+              $urlUS : '',
+              $urlAU : '',
+              $urlEU : '',
+              $urlSE : '',
+              $urlIE : '',
+              $urlFR : '',
+              $urlDE : '',
+              $urlNL : '',
+              $marginTop : '',
+              $marginBottom : '',
+              $paddingBottom : '',
+              $flush: ''  ) {
 
-//   // Dumping CSS
-//   .#{map-get($conf, name)} {
-//     width: map-get($conf, size);
-//     animation: fade map-get($conf, duration);
+  .#{$name} {
 
-//     $theme: map-get($conf, theme);
-//     @if $theme == "dark" {
-//       background: #333;
-//       color: #FEFEFE;
-//     }
-//     @else if $theme == "light" {
-//       background: #FEFEFE;
-//       color: #333;
-//     }
-//   }
-// }
+    padding-bottom: $paddingBottom;
 
-@mixin mobile($url, $padding-bottom) {
-	
-	background-image: url('#{$url}?r&$mobile$');
-	padding-bottom: $padding-bottom;
+    @if $marginTop != '' {
+      margin-top: $marginTop;
+    }
 
-	@media #{$desktop-small} {
-		display: none;
-	}
+    @if $marginBottom != '' {
+      margin-bottom: $marginBottom;
+    }
+
+    @if $url != '' {
+      background-image: url('#{$url}?#{$flush}&$mobile$');
+    } @else {
+      display: none;
+    }
+
+    @media #{$desktop-small} {
+      display: none;
+    }
+
+  }
+
+  @if $urlUK != '' {
+
+    .region-UK .#{$name} {
+      
+      background-image: url('#{$urlUK}?#{$flush}&$mobile$');
+
+      @if $url == '' {
+        @media #{$mobile} {
+          display: block;
+        }
+      }
+
+    }
+
+  }
+
+  @if $urlUS != '' {
+
+    .region-US .#{$name} {
+        
+      background-image: url('#{$urlUS}?#{$flush}&$mobile$');
+
+      @if $url == '' {
+        @media #{$mobile} {
+          display: block;
+        }
+      }
+      
+    }
+  }
+
+  @if $urlAU != '' {
+
+    .region-AU .#{$name} {
+
+      background-image: url('#{$urlAU}?#{$flush}&$mobile$');
+
+      @if $url == '' {
+        @media #{$mobile} {
+          display: block;
+        }
+      }
+      
+    }
+  }
+
+  @if $urlEU != '' {
+
+    .region-EU .#{$name} {
+
+      background-image: url('#{$urlEU}?#{$flush}&$mobile$');
+
+      @if $url == '' {
+        @media #{$mobile} {
+          display: block;
+        }
+      }
+      
+    }
+  }
+
+  @if $urlSE != '' {
+
+    .region-SE .#{$name} {
+        
+      background-image: url('#{$urlSE}?#{$flush}&$mobile$');
+
+      @if $url == '' {
+        @media #{$mobile} {
+          display: block;
+        }
+      }
+
+    } 
+  }
+
+  @if $urlIE != '' {
+
+    .region-IE .#{$name} {
+
+      background-image: url('#{$urlIE}?#{$flush}&$mobile$');
+
+      @if $url == '' {
+        @media #{$mobile} {
+          display: block;
+        }
+      }
+      
+    }
+  }
+
+  @if $urlFR != '' {
+
+    .region-FR .#{$name} {
+
+      background-image: url('#{$urlFR}?#{$flush}&$mobile$');
+
+      @if $url == '' {
+        @media #{$mobile} {
+          display: block;
+        }
+      }
+
+    }
+  }
+
+  @if $urlDE != '' {
+
+    .region-DE .#{$name} {
+
+      background-image: url('#{$urlDE}?#{$flush}&$desktop$');
+
+      @if $url == '' {
+        @media #{$mobile} {
+          display: block;
+        }
+      }
+
+    }
+  }
+
+  @if $urlNL != '' {
+
+    .region-NL .#{$name} {
+
+      background-image: url('#{$urlNL}?#{$flush}&$desktop$');
+
+      @if $url == '' {
+        @media #{$mobile} {
+          display: block;
+        }
+      }
+   
+    }
+  }
 
 }
 

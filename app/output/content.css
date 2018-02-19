@@ -2,14 +2,27 @@
   background-size: auto 100%;
 }
 
-.hero {
-  padding-bottom: 194.355%;
-  margin-bottom: 40px;
-  background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180208_wwlp_hero_DNT?r&$mobile$");
-}
-
 @media (min-width: 701px) {
   .hero {
+    padding-bottom: 30.125%;
+    margin-bottom: 40px;
     display: none;
+  }
+
+  .region-DE .hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180208_wwlp_hero_DNT_de?r&$desktop$");
+    display: block;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 701px) and (max-width: 768px) and (min-resolution: 192dpi) {
+  .region-DE .hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180208_wwlp_hero_DNT_de?r&$retina-sm$");
+  }
+}
+
+@media (min-width: 769px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 769px) and (min-resolution: 192dpi) {
+  .region-DE .hero {
+    background-image: url("https://riverisland.scene7.com/is/image/RiverIsland/c20180208_wwlp_hero_DNT_de?r&$retina$");
   }
 }

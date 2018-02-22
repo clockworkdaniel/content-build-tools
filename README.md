@@ -30,7 +30,7 @@ Run ```gulp watch```
         $name: '[CLASS GOES HERE]',
         $url: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT',
         //optional flush
-        $flush '_r',
+        $flush: '_r',
         //example hard coded regional images
         $urlDE: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_de',
         $urlUS: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180109_HP_DENIM_HERO_DNT_int',

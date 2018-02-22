@@ -500,7 +500,7 @@ $retina-large : "(min-width: 1441px) and (min-resolution: 192dpi)";
       }
 
       @if $url != '' {
-        background-image: url('#{$url}?#{$flush}$desktop-sm$');
+        background-image: url('#{$url}?#{$flush}&$desktop-sm$');
       } @else {
         display: none;
       }

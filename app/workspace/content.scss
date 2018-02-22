@@ -1,8 +1,7 @@
 @import 'config';
 
-@include mobile(
+@include image(
   $name: 'hero',
   $flush: 'r',
-  $marginBottom: 40px,
-  $url: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180208_wwlp_hero_DNT'
+  $marginBottom: 40px
 );

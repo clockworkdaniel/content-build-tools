@@ -3,6 +3,5 @@
 @include image(
   $name: 'hero',
   $flush: 'r',
-  $marginBottom: 40px,
-  $urlDE: 'https://riverisland.scene7.com/is/image/RiverIsland/c20180208_wwlp_hero_DNT_de'
-, $paddingBottom: 30.125% );
+  $marginBottom: 40px
+);

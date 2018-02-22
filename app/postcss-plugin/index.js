@@ -60,7 +60,7 @@ module.exports = postcss.plugin('padding', function padding() {
 
 					includes.push(includePromise);
 				} catch(err) {
-					console.error('Error: @include is missing https:// URL');
+					console.error('\x1b[31m%s\x1b[0m', 'Error: @include is missing https:// URL');
 				}
 			}
 		});
@@ -89,7 +89,7 @@ module.exports = postcss.plugin('padding', function padding() {
 						let dimensions = sizeOf(buffer);
 						newRule = calculate(thisInclude, rule, dimensions);
 					} catch(err) {
-						console.error('Error: ' + urlObject.href + ' is missing or wrong file type');
+						console.error('\x1b[31m%s\x1b[0m', 'Error: ' + urlObject.href + ' is missing or wrong file type');
 						newRule = '\r/*image – '  + urlObject.href + ' – is missing or the wrong file type*/';
 					}
 					
